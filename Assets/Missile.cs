@@ -37,4 +37,12 @@ public class Missile : MonoBehaviour
         yield return new WaitForSeconds(5);
         EndLife();
     }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            EndLife();
+        }
+    }
 }
